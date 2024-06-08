@@ -16,3 +16,10 @@ conda activate interview
 git clone <Repo Link>
 git add .
 git commit -m "<Message Over Here>"
+
+# Project Tool Stack
+ - Langchain For Application
+ - FastAPI For UI
+ - FAISS For Vector Storage : VectorDB, ChromaDB, Pinecone
+ - OpenAI 
+ - Embedding Model
