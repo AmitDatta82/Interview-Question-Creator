@@ -1,0 +1,234 @@
+Question: 1. What are the key features of Java as mentioned in the document?
+Answers: The key features of Java mentioned in the document are:
+1. Object-Oriented
+2. Platform-independent
+3. Memory Management (Garbage collected language)
+4. Exception Handling
+5. Simple, Small, and Familiar
+6. Portable and Platform Independent
+7. Compiled and Interpreted
+8. Scalability and Performance
+9. Robust and Secure
+10. Architectural-neutral
+11. High Performance
+12. Multi-Threaded
+13. Distributed
+14. Dynamic and Extensible
+------------------------------------------------
+Question: 2. Explain the concept of typecasting in Java with examples.
+Answers: Typecasting in Java is the process of converting a variable of one data type to another data type so that functions can process these variables correctly. There are two types of typecasting in Java:
+
+1. Implicit Type Casting (Widening): This involves storing a variable of a smaller data type into a larger data type. For example:
+```java
+int num = 10;
+double decimalNum = num; // Implicit type casting from int to double
+```
+
+2. Explicit Typecasting (Narrowing): This involves storing a variable of a larger data type into a smaller data type. For example:
+```java
+double decimalNum = 10.5;
+int num = (int) decimalNum; // Explicit type casting from double to int
+```
+
+In the explicit typecasting example, the `(int)` is used to explicitly cast the `double` variable `decimalNum` to an `int` variable `num`. It's important to note that explicit typecasting may result in data loss or truncation if the value is too large to fit in the smaller data type.
+------------------------------------------------
+Question: 3. List and explain the different types of operators in Java as mentioned in the document.
+Answers: The document mentions several types of operators in Java:
+
+1. Arithmetic operators: These include + (addition), - (subtraction), / (division), * (multiplication), and % (modulus). They are used for basic mathematical operations.
+
+2. Relational operators: These include < (less than), > (greater than), <= (less than or equal to), >= (greater than or equal to), == (equal to), and != (not equal to). They are used to compare values and return a boolean result.
+
+3. Logical operators: These include && (logical AND) and || (logical OR). They are used to combine multiple conditions and return a boolean result.
+
+4. Assignment operator: This includes = (assignment), +=, -=, *=, /=, %=, &=, ^=, |=, <<=, >>=, >>>=. It is used to assign values to variables.
+
+5. Increment and Decrement operators: ++ (increment) and -- (decrement). They are used to increase or decrease the value of a variable by 1.
+
+6. Conditional operator: ?: (ternary operator). It is a shorthand way of writing an if-else statement.
+
+7. Bitwise operators: ^ (XOR), & (AND), | (OR). They perform operations on individual bits of binary numbers.
+
+8. Special operators: . (dot operator to access methods of a class). It is used to access methods and variables of a class.
+
+These operators are essential in Java programming for performing different types of operations and comparisons.
+------------------------------------------------
+Question: 4. Describe the process of executing Java code using an IDE and through the terminal as per the document.
+Answers: To execute Java code using an IDE like Eclipse or NetBeans:
+1. Write your Java code in the IDE.
+2. Save the file with a .java extension.
+3. Click on the run or execute button in the IDE to compile and run the Java program.
+
+To execute Java code through the terminal:
+1. Write your Java code in a text editor.
+2. Save the file with a .java extension.
+3. Open the terminal.
+4. Use the command `javac [file_name].java` to compile the Java program.
+5. Use the command `java [file_name]` to run the compiled Java program.
+
+Remember, the file name should be the same as the class name containing the main() method.
+------------------------------------------------
+Question: 5. What are the different types of variables in Java and how are they defined?
+Answers: In Java, variables are classified into three types:
+
+1. Local Variable: Declared and initialized inside the body of a method, block, or constructor. They have access only within the method in which they are declared and are destroyed later when the function call is returned.
+
+2. Global or Instance Variable: Declared inside the class but outside of the method, block, or constructor. If not initialized, the default value is 0. They are created when an instance of the class is created and destroyed when it is destroyed.
+
+3. Static Variable: Declared using the "static" keyword. They cannot be local and create a single copy in memory shared among all objects at a class level.
+------------------------------------------------
+Question: 6. Explain the concept of inheritance in Java and provide examples of different types of inheritance.
+Answers: Inheritance in Java is a mechanism where a new class inherits properties and behavior from an existing class. This allows for code reusability and the creation of a hierarchy of classes. Here are the types of inheritance in Java:
+
+1. Single Inheritance: In this type, a child class inherits properties and behavior from a single parent class.
+2. Multilevel Inheritance: The child class inherits properties from its parent class, which in turn is a child class to another parent class.
+3. Multiple Inheritance: When a child class has two parent classes. In Java, this concept is achieved by using interfaces.
+4. Hierarchical Inheritance: When a parent class has two child classes inheriting its properties.
+
+Here is an example code snippet demonstrating simple inheritance in Java:
+
+```java
+class A {
+    int i, j;
+    void showij() {
+        System.out.println("i and j: " + i + " " + j);
+    }
+}
+
+class B extends A {
+    int k;
+    void showk() {
+        System.out.println("k: " + k);
+    }
+    void sum() {
+        System.out.println("i+j+k: " + (i+j+k));
+    }
+}
+
+class SimpleInheritance {
+    public static void main(String args[]) {
+        A objA = new A();
+        B objB = new B();
+        
+        objA.i = 10;
+        objA.j = 20;
+        System.out.println("Contents of objA: ");
+        objA.showij();
+        
+        objB.i = 7;
+        objB.j = 8;
+        objB.k = 9;
+        System.out.println("Contents of objB: ");
+        objB.showij();
+        objB.showk();
+        System.out.println("Sum of i, j and k in objB:");
+        objB.sum();
+    }
+}
+```
+
+This code demonstrates a simple inheritance scenario where class B extends class A, inheriting its properties and methods.
+------------------------------------------------
+Question: 7. How does polymorphism work in Java? Provide examples of method overriding and method overloading.
+Answers: Polymorphism in Java allows objects to be treated as instances of their parent class, even if they are instances of a child class. This enables flexibility in code and allows for cleaner and more readable implementations. There are two main ways to achieve polymorphism in Java:
+
+1. **Method Overriding**:
+   - Method overriding occurs when a method in a child class has the same name and type signature as a method in its parent class. The method in the child class then overrides the method in the parent class.
+   - Example:
+     ```java
+     class ParentMath {
+         void area() {
+             int a = 2;
+             System.out.printf("Area of Square with side 2 = %d %n", a * a);
+         }
+     }
+
+     class ChildMath extends ParentMath {
+         void area() {
+             int a = 4;
+             System.out.printf("Area of Square with side 4 = %d %n", a * a);
+         }
+
+         public static void main(String args[]) {
+             ChildMath obj = new ChildMath();
+             obj.area();
+         }
+     }
+     ```
+   
+2. **Method Overloading**:
+   - Method overloading allows multiple methods in the same class to share the same name but with different parameter declarations.
+   - Example:
+     ```java
+     class MathOperations {
+         void add(int a, int b) {
+             System.out.println("Sum: " + (a + b));
+         }
+
+         void add(int a, int b, int c) {
+             System.out.println("Sum: " + (a + b + c));
+         }
+     }
+     ```
+
+In the provided examples, `ChildMath` overrides the `area()` method from `ParentMath`, and `MathOperations` demonstrates method overloading with two `add()` methods that take different parameters.
+------------------------------------------------
+Question: 8. What is an abstract class in Java and how is it different from an interface?
+Answers: An abstract class in Java is a class that cannot be instantiated on its own and can contain both abstract and concrete methods. Abstract classes can have instance variables and constructors. They are used to define a common structure for its subclasses while allowing them to implement their own functionalities.
+
+On the other hand, an interface in Java is a blueprint of a class that contains only abstract methods, constants, and default methods. Interfaces cannot have instance variables or constructors. They are used to achieve multiple inheritances and provide a contract for classes to implement specific methods.
+
+The key differences between an abstract class and an interface are:
+1. An abstract class can have both abstract and concrete methods, while an interface can only have abstract methods.
+2. A class can extend only one abstract class but can implement multiple interfaces.
+3. Abstract classes can have constructors, while interfaces cannot.
+4. Abstract classes can have instance variables, but interfaces cannot.
+5. Abstract classes are used to define a common structure for subclasses, while interfaces are used to provide a contract for classes to implement specific methods.
+------------------------------------------------
+Question: 9. Describe the concept of exception handling in Java and provide examples of common Java exceptions.
+Answers: Exception handling in Java is the process of dealing with unexpected events that occur during the execution of a program. These events are known as exceptions. Java provides a robust exception handling mechanism to handle these exceptions effectively. 
+
+When an exception occurs, it disrupts the normal flow of the program. To handle exceptions, Java uses the keywords try, catch, and finally. Here's how it works:
+
+1. The code that might throw an exception is placed inside a try block.
+2. If an exception occurs, the program jumps to the catch block that matches the type of the exception.
+3. The catch block handles the exception, and the program continues to execute.
+4. The finally block is optional and is used to execute code that should always run, regardless of whether an exception occurs or not.
+
+Examples of common Java exceptions include:
+- ArithmeticException: Caused by math errors like division by zero.
+- ArrayIndexOutOfBoundsException: Caused by accessing an array with an invalid index.
+- NullPointerException: Caused by referencing a null object.
+- FileNotFoundException: Caused by trying to access a nonexistent file.
+- NumberFormatException: Caused when a conversion between strings and numbers fails.
+
+By handling exceptions properly, Java programs can gracefully recover from errors and continue execution without crashing.
+------------------------------------------------
+Question: 10. How does memory management work in Java? Explain the process of allocating and deallocating memory in Java.
+Answers: In Java, memory management involves allocating memory for new objects and deallocating memory for unused objects through a process called garbage collection. Here is an overview of how memory management works in Java:
+
+1. **Allocation of Memory**:
+   - When a method is called, a frame is created on the top of the stack.
+   - Local variables are created in the stack.
+   - Instance variables are created in the heap and are part of the object they belong to.
+   - Reference variables are created in the stack.
+
+2. **Deallocation of Memory**:
+   - Java uses automatic garbage collection to deallocate memory.
+   - Garbage collection identifies and removes objects that are no longer reachable or in use.
+   - When an object is no longer referenced by any part of the program, it is marked for garbage collection.
+   - The garbage collector runs periodically to reclaim memory occupied by unreachable objects.
+
+3. **Process of Garbage Collection**:
+   - The garbage collector identifies objects that are no longer reachable by tracing references from the root objects (objects that are directly accessible by the program).
+   - It marks these unreachable objects as garbage.
+   - The garbage collector then reclaims the memory occupied by these garbage objects.
+   - The memory is then made available for new object allocations.
+
+4. **Memory Management in Java**:
+   - Java abstracts the memory management process from developers, reducing the risk of memory leaks and dangling pointers.
+   - Developers do not need to explicitly deallocate memory as in languages like C or C++.
+   - Java's garbage collector automatically handles memory deallocation, making the process more efficient and less error-prone.
+
+Overall, memory management in Java is automatic and efficient, thanks to the garbage collection mechanism, which helps in maintaining the stability and performance of Java applications.
+------------------------------------------------
